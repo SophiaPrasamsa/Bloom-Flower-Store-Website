@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bloom Heaven Flower Store</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#fff5f7;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    background:#ff4d6d;
+    color:white;
+    padding:20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+header h1{
+    font-size:42px;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9');
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero h2{
+    font-size:65px;
+    margin-bottom:20px;
+    animation:fadeIn 2s ease;
+}
+
+.hero p{
+    font-size:24px;
+    width:80%;
+    line-height:1.6;
+}
+
+.caption{
+    font-size:28px;
+    color:#ffe066;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+.hero button{
+    margin-top:30px;
+}
+
+/* TITLE ANIMATION */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* BUTTON */
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#d6336c;
+    transform:scale(1.05);
+}
+
+/* BUTTERFLIES */
+
+.butterfly{
+    position:absolute;
+    font-size:45px;
+    animation:fly 8s infinite ease-in-out;
+    opacity:0.9;
+}
+
+.b1{
+    top:15%;
+    left:8%;
+    animation-delay:0s;
+}
+
+.b2{
+    top:30%;
+    right:12%;
+    animation-delay:1s;
+}
+
+.b3{
+    bottom:18%;
+    left:15%;
+    animation-delay:2s;
+}
+
+.b4{
+    top:60%;
+    right:25%;
+    animation-delay:3s;
+}
+
+.b5{
+    top:10%;
+    right:35%;
+    animation-delay:4s;
+}
+
+.b6{
+    bottom:10%;
+    left:40%;
+    animation-delay:5s;
+}
+
+@keyframes fly{
+
+    0%{
+        transform:translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-20px) translateX(15px) rotate(5deg);
+    }
+
+    50%{
+        transform:translateY(-40px) translateX(-15px) rotate(-5deg);
+    }
+
+    75%{
+        transform:translateY(-20px) translateX(10px) rotate(5deg);
+    }
+
+    100%{
+        transform:translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+}
+
+/* SECTION */
+
+.section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:40px;
+    font-size:45px;
+    color:#d6336c;
+}
+
+/* FLOWER CARDS */
+
+.flower-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.flower-card{
+    background:white;
+    width:280px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+    transition:0.4s;
+}
+
+.flower-card:hover{
+    transform:translateY(-10px);
+}
+
+.flower-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.flower-card h3{
+    margin:15px 0 10px;
+    color:#d6336c;
+}
+
+.flower-card p{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#ffe5ec;
+    padding:70px 30px;
+    text-align:center;
+}
+
+.about p{
+    max-width:850px;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* FORM */
+
+.billing,
+.contact{
+    padding:70px 20px;
+}
+
+.billing{
+    background:white;
+}
+
+.contact{
+    background:#ffe5ec;
+}
+
+form{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#ff4d6d;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h2{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<h1>Bloom Heaven Flower Store 🌸</h1>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#flowers">Flowers</a>
+<a href="#about">About</a>
+<a href="#billing">Billing</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+<!-- BUTTERFLIES -->
+
+<div class="butterfly b1">🦋</div>
+<div class="butterfly b2">🦋</div>
+<div class="butterfly b3">🦋</div>
+<div class="butterfly b4">🦋</div>
+<div class="butterfly b5">🦋</div>
+<div class="butterfly b6">🦋</div>
+
+<h2>Make Every Moment Bloom With Love 🌺</h2>
+
+<p class="caption">
+"Fresh Flowers That Speak The Language Of The Heart"
+</p>
+
+<p>
+Surprise your loved ones with premium bouquets crafted beautifully for birthdays,
+weddings, anniversaries and unforgettable celebrations.
+</p>
+
+<button onclick="document.getElementById('flowers').scrollIntoView();">
+Shop Flowers
+</button>
+
+</section>
+
+<!-- FLOWERS -->
+
+<section id="flowers" class="section">
+
+<h2>Our Premium Flower Collection 🌸</h2>
+
+<div class="flower-container">
+
+<!-- 15 FLOWERS -->
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7">
+<h3>Red Roses</h3>
+<p>₹499 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1520763185298-1b434c919102">
+<h3>Tulips</h3>
+<p>₹699 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51">
+<h3>Sunflowers</h3>
+<p>₹599 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
+<h3>Lavender</h3>
+<p>₹550 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364">
+<h3>White Lily</h3>
+<p>₹799 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321">
+<h3>Daisy</h3>
+<p>₹450 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
+<h3>Orchid</h3>
+<p>₹999 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1522383225653-ed111181a951">
+<h3>Cherry Blossom</h3>
+<p>₹899 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+ <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800" alt="Lotus">
+<h3>Carnation</h3>
+<p>₹650 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551">
+<h3>Peony</h3>
+<p>₹850 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+<h3>Hydrangea</h3>
+<p>₹799 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4">
+<h3>Lotus</h3>
+<p>₹550 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=800" alt="Poppy">
+<h3>Poppy</h3>
+<p>₹540 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+
+<div class="flower-card">
+<img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?q=80&w=800" alt="Bluebell">
+<h3>Bluebell</h3>
+<p>₹700 Bouquet</p>
+<button>Buy Now</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2>About Bloom Heaven 🌷</h2>
+
+<p>
+
+Bloom Heaven Flower Store delivers fresh and elegant flower bouquets
+for every celebration. We carefully design beautiful arrangements
+with love and creativity to make your moments more memorable.
+Our flowers are fresh, colorful and perfect for birthdays,
+weddings, anniversaries and special occasions.
+
+</p>
+
+</section>
+
+<!-- BILLING FORM -->
+
+<section id="billing" class="billing">
+
+<h2 style="text-align:center; margin-bottom:30px; color:#d6336c;">
+Billing Details 💳
+</h2>
+
+<form>
+
+<input type="text" placeholder="Enter Full Name" required>
+
+<input type="email" placeholder="Enter Email Address" required>
+
+<input type="text" placeholder="Enter Mobile Number" required>
+
+<textarea rows="4" placeholder="Enter Delivery Address"></textarea>
+
+<select required>
+
+<option>Select Flower</option>
+<option>Red Roses</option>
+<option>Tulips</option>
+<option>Sunflowers</option>
+<option>Lavender</option>
+<option>White Lily</option>
+<option>Daisy</option>
+<option>Orchid</option>
+<option>Cherry Blossom</option>
+<option>Lotus</option>
+<option>Peony</option>
+<option>Hydrangea</option>
+<option>Marigold</option>
+<option>Carnation</option>
+<option>Jasmine</option>
+<option>Bluebell</option>
+
+</select>
+
+<input type="number" placeholder="Enter Quantity">
+
+<input type="date">
+
+<select>
+
+<option>Select Payment Method</option>
+<option>UPI</option>
+<option>Credit Card</option>
+<option>Debit Card</option>
+<option>Cash On Delivery</option>
+
+</select>
+
+<input type="text" placeholder="Enter Card / UPI Number">
+
+<button type="submit">
+Place Order 🌸
+</button>
+
+</form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2 style="text-align:center; margin-bottom:30px; color:#d6336c;">
+Contact Us 📞
+</h2>
+
+<form>
+
+<input type="text" placeholder="Enter Your Name">
+
+<input type="email" placeholder="Enter Your Email">
+
+<input type="text" placeholder="Enter Mobile Number">
+
+<textarea rows="5" placeholder="Enter Your Message"></textarea>
+
+<button type="submit">
+Send Message 💌
+</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Bloom Heaven Flower Store | Designed By Sophia 🌸
+</p>
+
+</footer>
+
+</body>
+</html>
